@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datascience on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
+    <link>/tags/datascience/</link>
+    <description>Recent content in Datascience on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/datascience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Airflow 2/3. Установка с использованием Docker</title>
+      <link>/post/airflow/airflow2_install_with_docker/</link>
+      <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/airflow/airflow2_install_with_docker/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Apache Airflow&lt;/strong&gt; - свободное программное обеспечение, родившееся внутри компании &lt;strong&gt;Airbnb&lt;/strong&gt; для управления многочисленными и разветвленными
+рабочими процессами.&lt;/p&gt;
+&lt;p&gt;Эта статья про установку &lt;strong&gt;Apache Airflow 2&lt;/strong&gt; с использованием Docker. Обращаю внимание, что в данном мануале рассматривается стандартная установка приложения
+с CeleryExecutor. Модификацию yaml под LocalExecutor возможно опишу в последующих статьях.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Apache Airflow 1/3. Установка и первые шаги</title>
+      <link>/post/airflow/airflow2_install/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/airflow/airflow2_install/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Apache Airflow&lt;/strong&gt; - свободное программное обеспечение, родившееся внутри компании &lt;strong&gt;Airbnb&lt;/strong&gt; для управления многочисленными и разветвленными
+рабочими процессами. Airflow написан на &lt;strong&gt;Python&lt;/strong&gt; и процессы, которые вы будете использовать в своей работе также будете создавать на этом языке.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

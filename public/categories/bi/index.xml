@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BI on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
+    <link>/categories/bi/</link>
+    <description>Recent content in BI on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qlik Web Connectors 2/2. Конфигурирование</title>
+      <link>/post/qlik/configure_qlik_web_connectors/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/qlik/configure_qlik_web_connectors/</guid>
+      <description>&lt;p&gt;Вторая часть статьи - рассматриваем более тонкую настройку Qlik Web Connectors для использования в многопользовательском режиме.
+Начало в &lt;a href=&#34;/post/qlik/install_qlik_web_connectors/&#34;&gt;первой части&lt;/a&gt;, описывающей процедуру установки бандла, возможные ошибки, способы их преодоления и запуск.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Qlik Web Connectors 1/2. Установка</title>
+      <link>/post/qlik/install_qlik_web_connectors/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/qlik/install_qlik_web_connectors/</guid>
+      <description>&lt;p&gt;В Qlik Sense &amp;ldquo;из коробки&amp;rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

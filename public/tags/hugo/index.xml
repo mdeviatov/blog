@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
+    <link>/tags/hugo/</link>
+    <description>Recent content in hugo on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка Hugo и хостинг на GitPages</title>
+      <link>/post/hugo_install/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugo_install/</guid>
+      <description>Интро Блог полезный инструмент маркетинга, удобный способ вести дневник а также отличный вариант сохранения инструкций для последующего воспроизведения. Душа радуется когда находишь хорошо структурированную документацию или how-to. Давно убежден в том, что знаниями обязательно нужно делиться, так что будем считать что пришло время внести и свой вклад.
+Что такое Hugo? Hugo это генератор статических сайтов, который упрощает и ускоряет создание сайта за счет предварительно созданной схемы взаимодействия страниц и блоков информации.</description>
+    </item>
+    
+  </channel>
+</rss>

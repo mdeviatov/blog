@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
+    <link>/categories/development/</link>
+    <description>Recent content in Development on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Использование Docker для разработки на Python 1/2</title>
+      <link>/post/docker/docker/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/docker/docker/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt; - технология, развиваемая примерно с 2008 года для решения вопроса независимости среды выполнения от внешних условий.
+Общепринятое определение гласит, что Docker: это средство упаковки, доставки и запуска приложений.
+В этой статье разберемся с тем как Docker устанавливается а также освоим базовые команды для манипуляции образами.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Несколько версий Python. Установка и использование pyenv.</title>
+      <link>/post/pyenv/</link>
+      <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pyenv/</guid>
+      <description>&lt;h3 id=&#34;предназначение-pyenv&#34;&gt;Предназначение pyenv&lt;/h3&gt;
+&lt;p&gt;Пакет &lt;strong&gt;pyenv&lt;/strong&gt; для меня решает две основные задачи:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.&lt;/li&gt;
+&lt;li&gt;Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
+как-то интегрирована какая-то версия Python.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

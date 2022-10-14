@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A blog about business intelligence, data, programming and DevOps</title>
+    <link>/en/</link>
+    <description>Recent content on A blog about business intelligence, data, programming and DevOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authors</title>
+      <link>/en/about/</link>
+      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/en/about/</guid>
+      <description>Maxim Deviatov Current occupation: Head and founder of IDEA company. Software developer. Experience in IT since 1995.
+Area of interest Currently interested in data analysis, the use of analytics in business.
+I participate in projects as a manager, consultant and developer. Extensive experience in the field of real estate, medicine, customer service. Platform used: Qlik, Airflow, data sources: SQL, REST, cloud services. Business automation outsourcing Development in Python3: data processing, document generation and processing, WorkFlow automation, DevOps Work experience, skills and abilities Development Qlik Developer (since 2017) Node.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/en/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/projects/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
