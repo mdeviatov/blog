@@ -1,101 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ru</language>
-    <lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Apache Airflow 2/3. Установка с использованием Docker</title>
-      <link>/post/airflow/airflow2_install_with_docker/</link>
-      <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/airflow/airflow2_install_with_docker/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Apache Airflow&lt;/strong&gt; - свободное программное обеспечение, родившееся внутри компании &lt;strong&gt;Airbnb&lt;/strong&gt; для управления многочисленными и разветвленными
-рабочими процессами.&lt;/p&gt;
-&lt;p&gt;Эта статья про установку &lt;strong&gt;Apache Airflow 2&lt;/strong&gt; с использованием Docker. Обращаю внимание, что в данном мануале рассматривается стандартная установка приложения
-с CeleryExecutor. Модификацию yaml под LocalExecutor возможно опишу в последующих статьях.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Qlik Web Connectors 2/2. Конфигурирование</title>
-      <link>/post/qlik/configure_qlik_web_connectors/</link>
-      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/qlik/configure_qlik_web_connectors/</guid>
-      <description>&lt;p&gt;Вторая часть статьи - рассматриваем более тонкую настройку Qlik Web Connectors для использования в многопользовательском режиме.
-Начало в &lt;a href=&#34;/post/qlik/install_qlik_web_connectors/&#34;&gt;первой части&lt;/a&gt;, описывающей процедуру установки бандла, возможные ошибки, способы их преодоления и запуск.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Qlik Web Connectors 1/2. Установка</title>
-      <link>/post/qlik/install_qlik_web_connectors/</link>
-      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/qlik/install_qlik_web_connectors/</guid>
-      <description>&lt;p&gt;В Qlik Sense &amp;ldquo;из коробки&amp;rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on IDEA</title><link>https://blog.ideabi.ru/post/</link><description>Recent content in Posts on IDEA</description><generator>Hugo -- gohugo.io</generator><language>ru</language><lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.ideabi.ru/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache Airflow 2/3. Установка с использованием Docker</title><link>https://blog.ideabi.ru/post/airflow/airflow2_install_with_docker/</link><pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/airflow/airflow2_install_with_docker/</guid><description>&lt;p>&lt;strong>Apache Airflow&lt;/strong> - свободное программное обеспечение, родившееся внутри компании &lt;strong>Airbnb&lt;/strong> для управления многочисленными и разветвленными
+рабочими процессами.&lt;/p>
+&lt;p>Эта статья про установку &lt;strong>Apache Airflow 2&lt;/strong> с использованием Docker. Обращаю внимание, что в данном мануале рассматривается стандартная установка приложения
+с CeleryExecutor. Модификацию yaml под LocalExecutor возможно опишу в последующих статьях.&lt;/p></description></item><item><title>Qlik Web Connectors 2/2. Конфигурирование</title><link>https://blog.ideabi.ru/post/qlik/configure_qlik_web_connectors/</link><pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/qlik/configure_qlik_web_connectors/</guid><description>&lt;p>Вторая часть статьи - рассматриваем более тонкую настройку Qlik Web Connectors для использования в многопользовательском режиме.
+Начало в &lt;a href="https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/">первой части&lt;/a>, описывающей процедуру установки бандла, возможные ошибки, способы их преодоления и запуск.&lt;/p></description></item><item><title>Qlik Web Connectors 1/2. Установка</title><link>https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/</link><pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/</guid><description>&lt;p>В Qlik Sense &amp;ldquo;из коробки&amp;rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
 что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
-Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Apache Airflow 1/3. Установка и первые шаги</title>
-      <link>/post/airflow/airflow2_install/</link>
-      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/airflow/airflow2_install/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Apache Airflow&lt;/strong&gt; - свободное программное обеспечение, родившееся внутри компании &lt;strong&gt;Airbnb&lt;/strong&gt; для управления многочисленными и разветвленными
-рабочими процессами. Airflow написан на &lt;strong&gt;Python&lt;/strong&gt; и процессы, которые вы будете использовать в своей работе также будете создавать на этом языке.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Использование Docker для разработки на Python 1/2</title>
-      <link>/post/docker/docker/</link>
-      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/docker/docker/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt; - технология, развиваемая примерно с 2008 года для решения вопроса независимости среды выполнения от внешних условий.
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.&lt;/p></description></item><item><title>Apache Airflow 1/3. Установка и первые шаги</title><link>https://blog.ideabi.ru/post/airflow/airflow2_install/</link><pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/airflow/airflow2_install/</guid><description>&lt;p>&lt;strong>Apache Airflow&lt;/strong> - свободное программное обеспечение, родившееся внутри компании &lt;strong>Airbnb&lt;/strong> для управления многочисленными и разветвленными
+рабочими процессами. Airflow написан на &lt;strong>Python&lt;/strong> и процессы, которые вы будете использовать в своей работе также будете создавать на этом языке.&lt;/p></description></item><item><title>Использование Docker для разработки на Python 1/2</title><link>https://blog.ideabi.ru/post/docker/docker/</link><pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/docker/docker/</guid><description>&lt;p>&lt;strong>Docker&lt;/strong> - технология, развиваемая примерно с 2008 года для решения вопроса независимости среды выполнения от внешних условий.
 Общепринятое определение гласит, что Docker: это средство упаковки, доставки и запуска приложений.
-В этой статье разберемся с тем как Docker устанавливается а также освоим базовые команды для манипуляции образами.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Планы по статьям</title>
-      <link>/post/plany-na-posty/</link>
-      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/plany-na-posty/</guid>
-      <description>&lt;p&gt;В связи с тем, что мои интересы все больше смещаются в сторону кодинга и управления данными,
+В этой статье разберемся с тем как Docker устанавливается а также освоим базовые команды для манипуляции образами.&lt;/p></description></item><item><title>Планы по статьям</title><link>https://blog.ideabi.ru/post/plany-na-posty/</link><pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/plany-na-posty/</guid><description>&lt;p>В связи с тем, что мои интересы все больше смещаются в сторону кодинга и управления данными,
 планирую делать публикации прежде всего о соответствующих решениях.
-И этот пост - попытка планирования)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Несколько версий Python. Установка и использование pyenv.</title>
-      <link>/post/pyenv/</link>
-      <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/pyenv/</guid>
-      <description>&lt;h3 id=&#34;предназначение-pyenv&#34;&gt;Предназначение pyenv&lt;/h3&gt;
-&lt;p&gt;Пакет &lt;strong&gt;pyenv&lt;/strong&gt; для меня решает две основные задачи:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.&lt;/li&gt;
-&lt;li&gt;Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
-как-то интегрирована какая-то версия Python.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Установка Hugo и хостинг на GitPages</title>
-      <link>/post/hugo_install/</link>
-      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/hugo_install/</guid>
-      <description>Интро Блог полезный инструмент маркетинга, удобный способ вести дневник а также отличный вариант сохранения инструкций для последующего воспроизведения. Душа радуется когда находишь хорошо структурированную документацию или how-to. Давно убежден в том, что знаниями обязательно нужно делиться, так что будем считать что пришло время внести и свой вклад.
-Что такое Hugo? Hugo это генератор статических сайтов, который упрощает и ускоряет создание сайта за счет предварительно созданной схемы взаимодействия страниц и блоков информации.</description>
-    </item>
-    
-  </channel>
-</rss>
+И этот пост - попытка планирования)&lt;/p></description></item><item><title>Несколько версий Python. Установка и использование pyenv.</title><link>https://blog.ideabi.ru/post/pyenv/</link><pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/pyenv/</guid><description>&lt;h3 id="предназначение-pyenv">Предназначение pyenv&lt;/h3>
+&lt;p>Пакет &lt;strong>pyenv&lt;/strong> для меня решает две основные задачи:&lt;/p>
+&lt;ul>
+&lt;li>Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.&lt;/li>
+&lt;li>Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
+как-то интегрирована какая-то версия Python.&lt;/li>
+&lt;/ul></description></item><item><title>Установка Hugo и хостинг на GitPages</title><link>https://blog.ideabi.ru/post/hugo_install/</link><pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/hugo_install/</guid><description>Интро Блог полезный инструмент маркетинга, удобный способ вести дневник а также отличный вариант сохранения инструкций для последующего воспроизведения. Душа радуется когда находишь хорошо структурированную документацию или how-to. Давно убежден в том, что знаниями обязательно нужно делиться, так что будем считать что пришло время внести и свой вклад.
+Что такое Hugo? Hugo это генератор статических сайтов, который упрощает и ускоряет создание сайта за счет предварительно созданной схемы взаимодействия страниц и блоков информации.</description></item></channel></rss>

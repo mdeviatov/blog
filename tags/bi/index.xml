@@ -1,54 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>BI on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
-    <link>/tags/bi/</link>
-    <description>Recent content in BI on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ru</language>
-    <lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/bi/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Apache Airflow 2/3. Установка с использованием Docker</title>
-      <link>/post/airflow/airflow2_install_with_docker/</link>
-      <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/airflow/airflow2_install_with_docker/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Apache Airflow&lt;/strong&gt; - свободное программное обеспечение, родившееся внутри компании &lt;strong&gt;Airbnb&lt;/strong&gt; для управления многочисленными и разветвленными
-рабочими процессами.&lt;/p&gt;
-&lt;p&gt;Эта статья про установку &lt;strong&gt;Apache Airflow 2&lt;/strong&gt; с использованием Docker. Обращаю внимание, что в данном мануале рассматривается стандартная установка приложения
-с CeleryExecutor. Модификацию yaml под LocalExecutor возможно опишу в последующих статьях.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Qlik Web Connectors 2/2. Конфигурирование</title>
-      <link>/post/qlik/configure_qlik_web_connectors/</link>
-      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/qlik/configure_qlik_web_connectors/</guid>
-      <description>&lt;p&gt;Вторая часть статьи - рассматриваем более тонкую настройку Qlik Web Connectors для использования в многопользовательском режиме.
-Начало в &lt;a href=&#34;/post/qlik/install_qlik_web_connectors/&#34;&gt;первой части&lt;/a&gt;, описывающей процедуру установки бандла, возможные ошибки, способы их преодоления и запуск.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Qlik Web Connectors 1/2. Установка</title>
-      <link>/post/qlik/install_qlik_web_connectors/</link>
-      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/qlik/install_qlik_web_connectors/</guid>
-      <description>&lt;p&gt;В Qlik Sense &amp;ldquo;из коробки&amp;rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BI on IDEA</title><link>https://blog.ideabi.ru/tags/bi/</link><description>Recent content in BI on IDEA</description><generator>Hugo -- gohugo.io</generator><language>ru</language><lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.ideabi.ru/tags/bi/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache Airflow 2/3. Установка с использованием Docker</title><link>https://blog.ideabi.ru/post/airflow/airflow2_install_with_docker/</link><pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/airflow/airflow2_install_with_docker/</guid><description>&lt;p>&lt;strong>Apache Airflow&lt;/strong> - свободное программное обеспечение, родившееся внутри компании &lt;strong>Airbnb&lt;/strong> для управления многочисленными и разветвленными
+рабочими процессами.&lt;/p>
+&lt;p>Эта статья про установку &lt;strong>Apache Airflow 2&lt;/strong> с использованием Docker. Обращаю внимание, что в данном мануале рассматривается стандартная установка приложения
+с CeleryExecutor. Модификацию yaml под LocalExecutor возможно опишу в последующих статьях.&lt;/p></description></item><item><title>Qlik Web Connectors 2/2. Конфигурирование</title><link>https://blog.ideabi.ru/post/qlik/configure_qlik_web_connectors/</link><pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/qlik/configure_qlik_web_connectors/</guid><description>&lt;p>Вторая часть статьи - рассматриваем более тонкую настройку Qlik Web Connectors для использования в многопользовательском режиме.
+Начало в &lt;a href="https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/">первой части&lt;/a>, описывающей процедуру установки бандла, возможные ошибки, способы их преодоления и запуск.&lt;/p></description></item><item><title>Qlik Web Connectors 1/2. Установка</title><link>https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/</link><pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/</guid><description>&lt;p>В Qlik Sense &amp;ldquo;из коробки&amp;rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
 что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
-Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Apache Airflow 1/3. Установка и первые шаги</title>
-      <link>/post/airflow/airflow2_install/</link>
-      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/airflow/airflow2_install/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Apache Airflow&lt;/strong&gt; - свободное программное обеспечение, родившееся внутри компании &lt;strong&gt;Airbnb&lt;/strong&gt; для управления многочисленными и разветвленными
-рабочими процессами. Airflow написан на &lt;strong&gt;Python&lt;/strong&gt; и процессы, которые вы будете использовать в своей работе также будете создавать на этом языке.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.&lt;/p></description></item><item><title>Apache Airflow 1/3. Установка и первые шаги</title><link>https://blog.ideabi.ru/post/airflow/airflow2_install/</link><pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/airflow/airflow2_install/</guid><description>&lt;p>&lt;strong>Apache Airflow&lt;/strong> - свободное программное обеспечение, родившееся внутри компании &lt;strong>Airbnb&lt;/strong> для управления многочисленными и разветвленными
+рабочими процессами. Airflow написан на &lt;strong>Python&lt;/strong> и процессы, которые вы будете использовать в своей работе также будете создавать на этом языке.&lt;/p></description></item></channel></rss>

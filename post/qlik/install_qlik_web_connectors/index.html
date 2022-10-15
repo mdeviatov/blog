@@ -1,364 +1,45 @@
-<!DOCTYPE html>
-<html class="no-js" lang="ru">
-<head>
-	<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
-  <link rel="dns-prefetch" href='https://www.googletagmanager.com'>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-NF6XD6B');</script>
-
-
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Qlik Web Connectors 1/2. Установка - Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Qlik Web Connectors 1/2. Установка"/>
-<meta name="twitter:description" content="В Qlik Sense &ldquo;из коробки&rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+<!doctype html><html class=no-js lang=ru><head><link href=https://www.googletagmanager.com rel=preconnect crossorigin><link rel=dns-prefetch href=https://www.googletagmanager.com><script>(function(e,t,n,s,o){e[s]=e[s]||[],e[s].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var a=t.getElementsByTagName(n)[0],i=t.createElement(n),r=s!="dataLayer"?"&l="+s:"";i.async=!0,i.src="//www.googletagmanager.com/gtm.js?id="+o+r,a.parentNode.insertBefore(i,a)})(window,document,"script","dataLayer","GTM-NF6XD6B")</script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>Qlik Web Connectors 1/2. Установка - IDEA</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content><meta property="og:title" content="Qlik Web Connectors 1/2. Установка"><meta property="og:description" content="В Qlik Sense &ldquo;из коробки&rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
 что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
-Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View."/>
-
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="dns-prefetch" href="//fonts.googleapis.com">
-	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
-
-	<link rel="stylesheet" href="/css/style.css">
-	
-
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-</head>
-<body class="body">
-
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NF6XD6B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-	<div class="container container--outer">
-		<header class="header">
-	<div class="container header__container">
-		
-	<div class="logo logo--mixed">
-		<a class="logo__link" href="/" title="Блог IDEA" rel="home">
-			<div class="logo__item logo__imagebox">
-					<img class="logo__img" src="/img/IDEA-0.png">
-				</div><div class="logo__item logo__text">
-					<div class="logo__title">Блог IDEA</div>
-					<div class="logo__tagline">Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</div>
-				</div>
-		</a>
-	</div>
-		
-<nav class="menu">
-	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
-		<span class="menu__btn-title" tabindex="-1">Меню</span>
-	</button>
-	<ul class="menu__list">
-		<li class="menu__item">
-			<a class="menu__link" href="/post">
-				
-				<span class="menu__text">Блог</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/about">
-				
-				<span class="menu__text">Авторы</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/projects">
-				
-				<span class="menu__text">Проекты</span>
-				
-			</a>
-		</li>
-	</ul>
-</nav>
-
-	</div>
-</header>
-		<div class="wrapper flex">
-			<div class="primary">
-			
-<main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">Qlik Web Connectors 1/2. Установка</h1>
-			<div class="post__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Максим Девятов</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-05-25T00:00:00Z">25-05-2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/bi/" rel="category">BI</a>
-	</span>
-</div></div>
-		</header>
-<div class="post__toc toc">
-	<div class="toc__title">Содержимое страницы</div>
-	<div class="toc__menu">
-		<nav id="TableOfContents">
-  <ul>
-    <li><a href="#полезные-ссылки">Полезные ссылки</a></li>
-    <li><a href="#список-коннекторов-в-составе-бандла">Список коннекторов в составе бандла:</a></li>
-    <li><a href="#установка">Установка</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#поздравляю">Поздравляю!</a></li>
-  </ul>
-</nav>
-	</div>
-</div><div class="content post__content clearfix">
-			<p>В Qlik Sense &ldquo;из коробки&rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View."><meta property="og:type" content="article"><meta property="og:url" content="https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-05-25T00:00:00+00:00"><meta property="article:modified_time" content="2021-05-25T00:00:00+00:00"><meta property="og:site_name" content="IDEA"><meta itemprop=name content="Qlik Web Connectors 1/2. Установка"><meta itemprop=description content="В Qlik Sense &ldquo;из коробки&rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
 что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
-Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.</p>
-<p>У вас есть право использовать Qlik Web Connectors если у вас есть лицензия, например, на Qlik Sense Enterprise.
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View."><meta itemprop=datePublished content="2021-05-25T00:00:00+00:00"><meta itemprop=dateModified content="2021-05-25T00:00:00+00:00"><meta itemprop=wordCount content="807"><meta itemprop=keywords content="Qlik,BI,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Qlik Web Connectors 1/2. Установка"><meta name=twitter:description content="В Qlik Sense &ldquo;из коробки&rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View."><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico><script async src="https://www.googletagmanager.com/gtag/js?id=G-V9SBB1KX2Y"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-V9SBB1KX2Y",{anonymize_ip:!1})}</script></head><body class=body><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NF6XD6B" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class="container container--outer"><header class=header><div class="container header__container"><div class="logo logo--mixed"><a class=logo__link href=/ title=IDEA rel=home><div class="logo__item logo__imagebox"><img class=logo__img src=/img/IDEA-0.png></div><div class="logo__item logo__text"><div class=logo__title>IDEA</div><div class=logo__tagline>Блог о проектах и разработке</div></div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Меню</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/post><span class=menu__text>Блог</span></a></li><li class=menu__item><a class=menu__link href=/collaboration><span class=menu__text>Сотрудничество</span></a></li><li class=menu__item><a class=menu__link href=/projects><span class=menu__text>Проекты</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>Qlik Web Connectors 1/2. Установка</h1><div class="post__meta meta"><div class="meta__item-author meta__item"><svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2.0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class=meta__text>Максим Девятов</span></div><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-05-25T00:00:00Z>25-05-2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/bi/ rel=category>BI</a></span></div></div></header><div class="post__toc toc"><div class=toc__title>Содержимое страницы</div><div class=toc__menu><nav id=TableOfContents><ul><li><a href=#полезные-ссылки>Полезные ссылки</a></li><li><a href=#список-коннекторов-в-составе-бандла>Список коннекторов в составе бандла:</a></li><li><a href=#установка>Установка</a><ul><li></li></ul></li><li><a href=#поздравляю>Поздравляю!</a></li></ul></nav></div></div><div class="content post__content clearfix"><p>В Qlik Sense &ldquo;из коробки&rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.</p><p>У вас есть право использовать Qlik Web Connectors если у вас есть лицензия, например, на Qlik Sense Enterprise.
 Сейчас Qlik Web Connectors это бандл, в который входит около 40 бесплатных коннекторов.
-С недавнего времени правила лицензирования этого бандла поменялись, а раньше часть Premium-коннекторов была платная.</p>
-<p>Как минимум два коннектора мы активно используем для своих внутренних задач:</p>
-<ul>
-<li><strong>Qlik Google Drive &amp; Spreadsheets Connector</strong>: некоторые аналитические приложения генерируют и загружают данные хранящиеся на Google Drive</li>
-<li><strong>Qlik JIRA Connector</strong> используем для генерации отчетов на основании данных Atlassian Jira</li>
-</ul>
-<p>После установки Qlik Web Connectors работает как web-сервис, по сути являясь промежуточным слоем загрузки данных из источников.
+С недавнего времени правила лицензирования этого бандла поменялись, а раньше часть Premium-коннекторов была платная.</p><p>Как минимум два коннектора мы активно используем для своих внутренних задач:</p><ul><li><strong>Qlik Google Drive & Spreadsheets Connector</strong>: некоторые аналитические приложения генерируют и загружают данные хранящиеся на Google Drive</li><li><strong>Qlik JIRA Connector</strong> используем для генерации отчетов на основании данных Atlassian Jira</li></ul><p>После установки Qlik Web Connectors работает как web-сервис, по сути являясь промежуточным слоем загрузки данных из источников.
 В момент загрузки данных используются открытые API сервисов, а со стороны приложения Qlik выполняется стандартный скрипт загрузки
-отправляющий запросы в Qlik Web Connectors.</p>
-<h2 id="полезные-ссылки">Полезные ссылки</h2>
-<p><a href="https://help.qlik.com/en-US/connectors/Subsystems/Web_Connectors_help/Content/Connectors_QWC/Setup-deploy/Qlik_Web_Connectors_package.htm">Документация Qlik Web Connectors</a></p>
-<h2 id="список-коннекторов-в-составе-бандла">Список коннекторов в составе бандла:</h2>
-<ul>
-<li>Qlik Amazon S3 Connector</li>
-<li>Qlik AYLIEN News Connector V2</li>
-<li>Qlik AYLIEN Text Analysis Connector</li>
-<li>Qlik Azure Storage Connector</li>
-<li>Qlik Bitly Connector V2</li>
-<li>Qlik Box Connector</li>
-<li>Qlik Dropbox Connector</li>
-<li>Qlik Facebook Fan Pages Connector</li>
-<li>Qlik Facebook Insights Connector</li>
-<li>Qlik FTP/SFTP Connector</li>
-<li>Qlik General Web Connector</li>
-<li>Qlik GitHub Connector</li>
-<li>Qlik Google Ad Manager Connector</li>
-<li>Qlik Google AdSense Connector</li>
-<li>Qlik Google AdWords Connector</li>
-<li>Qlik Google Analytics Connector</li>
-<li>Qlik Google Calendar Connector</li>
-<li>Qlik Google Drive &amp; Spreadsheets Connector</li>
-<li>Qlik Google Search Console Connector</li>
-<li>Qlik Helper Connector</li>
-<li>Qlik JIRA Connector</li>
-<li>Qlik Mailbox IMAP Connector</li>
-<li>Qlik Mailbox POP3 Connector</li>
-<li>Qlik MailChimp Connector V2</li>
-<li>Qlik MeaningCloud Connector</li>
-<li>Qlik Microsoft Dynamics CRM Connector V2</li>
-<li>Qlik OData Connector</li>
-<li>Qlik Office 365 Sharepoint Connector</li>
-<li>Qlik OneDrive Connector V2</li>
-<li>Qlik Outlook 365 Connector</li>
-<li>Qlik Qualtrics Connector</li>
-<li>Qlik RegEx Connector</li>
-<li>Qlik Repustate Connector</li>
-<li>Qlik Sentiment140 Connector</li>
-<li>Qlik Slack Connector V2</li>
-<li>Qlik SMTP Connector</li>
-<li>Qlik Strava Connector</li>
-<li>Qlik SugarCRM Connector</li>
-<li>Qlik SurveyMonkey Connector</li>
-<li>Qlik Twitter Connector</li>
-<li>Qlik Watson Natural Language Understanding Connector</li>
-<li>Qlik YouTube Analytics Connector</li>
-</ul>
-<h2 id="установка">Установка</h2>
-<h5 id="1-получение-дистрибутива">1. Получение дистрибутива</h5>
-<p>Подразумевается, что у вас есть доступ к порталу загрузки продуктов Qlik и вы уже скачали zip файл. Например он может называться как-то так: <em>QlikWebConnectorsDecember2020Patch2.zip</em>.
-Пользователи Qlik Sense или Qlik View с активной подпиской/поддержкой могут перейти на портал загрузки по кнопке <strong>Download Qlik Product</strong> в правом верхнем углу сайта.</p>
-<p><img src="select_product.png" alt="select_product"></p>
-<h5 id="2-разблокируйте-zip-файл">2. Разблокируйте zip-файл</h5>
-<p>Этап который не стоит пропускать, но некоторые склонны его игнорировать! После загрузки ZIP-файла необходимо установить чек-бокс <strong>&ldquo;Разблокировать&rdquo;</strong></p>
-<p><img src="remove_download.png" alt="step_2"></p>
-<h5 id="3-распакуйте-архив-в-папку">3. Распакуйте архив в папку</h5>
-<p>В моем примере: <strong>c:\WebConnector</strong></p>
-<p><img src="all_files.png" alt="step_3"></p>
-<h5 id="4-определяемся-со-сценарием-использования">4. Определяемся со сценарием использования</h5>
-<p>На этом этапе вы можете начать использовать коннекторы если вы единственный пользователь и нет задачи настроить авторизацию и ограничить доступ к функционалу.
-В таком случае можете сразу переходить к последнему пункту.</p>
-<p>В противном случае необходима дополнительная настройка.</p>
-<h5 id="5-установка-и-запуск-web-connectors-как-windows-service">5. Установка и запуск Web Connectors как Windows Service</h5>
-<p>Переходим в каталог <strong>BatchFiles</strong>:</p>
-<p><img src="batch_files.png" alt="Step_5"></p>
-<p>Перед запуском необходимо проверить корректность путей в bat-файле. Откройте файл <strong>Install Service.bat</strong> в любом текстовом редакторе и убедитесь, что указаны правильные пути:
-Путь к фреймворку Microsoft.NET у вас может быть другой.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span><span style="color:#75715e">REM *****************************</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">REM IMPORTANT - PLEASE READ:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">REM * You should ensure than you have &#39;unblocked&#39; the Qlik Web Connectors download zip file BEFORE unzipping it and running this.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">REM * You need to change the following paths to match your .NET installation directory and QlikWebConnectorsSVC.exe location.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">REM * You should run this file as Administrator (right click, &#39;Run as administrator&#39;).</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">REM *****************************</span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>%windir%<span style="color:#e6db74">\Microsoft.NET\Framework\v4.0.30319\installutil&#34;</span> <span style="color:#e6db74">&#34;c:\WebConnector\QlikWebConnectorsSVC.exe&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pause</span>
+отправляющий запросы в Qlik Web Connectors.</p><h2 id=полезные-ссылки>Полезные ссылки</h2><p><a href=https://help.qlik.com/en-US/connectors/Subsystems/Web_Connectors_help/Content/Connectors_QWC/Setup-deploy/Qlik_Web_Connectors_package.htm>Документация Qlik Web Connectors</a></p><h2 id=список-коннекторов-в-составе-бандла>Список коннекторов в составе бандла:</h2><ul><li>Qlik Amazon S3 Connector</li><li>Qlik AYLIEN News Connector V2</li><li>Qlik AYLIEN Text Analysis Connector</li><li>Qlik Azure Storage Connector</li><li>Qlik Bitly Connector V2</li><li>Qlik Box Connector</li><li>Qlik Dropbox Connector</li><li>Qlik Facebook Fan Pages Connector</li><li>Qlik Facebook Insights Connector</li><li>Qlik FTP/SFTP Connector</li><li>Qlik General Web Connector</li><li>Qlik GitHub Connector</li><li>Qlik Google Ad Manager Connector</li><li>Qlik Google AdSense Connector</li><li>Qlik Google AdWords Connector</li><li>Qlik Google Analytics Connector</li><li>Qlik Google Calendar Connector</li><li>Qlik Google Drive & Spreadsheets Connector</li><li>Qlik Google Search Console Connector</li><li>Qlik Helper Connector</li><li>Qlik JIRA Connector</li><li>Qlik Mailbox IMAP Connector</li><li>Qlik Mailbox POP3 Connector</li><li>Qlik MailChimp Connector V2</li><li>Qlik MeaningCloud Connector</li><li>Qlik Microsoft Dynamics CRM Connector V2</li><li>Qlik OData Connector</li><li>Qlik Office 365 Sharepoint Connector</li><li>Qlik OneDrive Connector V2</li><li>Qlik Outlook 365 Connector</li><li>Qlik Qualtrics Connector</li><li>Qlik RegEx Connector</li><li>Qlik Repustate Connector</li><li>Qlik Sentiment140 Connector</li><li>Qlik Slack Connector V2</li><li>Qlik SMTP Connector</li><li>Qlik Strava Connector</li><li>Qlik SugarCRM Connector</li><li>Qlik SurveyMonkey Connector</li><li>Qlik Twitter Connector</li><li>Qlik Watson Natural Language Understanding Connector</li><li>Qlik YouTube Analytics Connector</li></ul><h2 id=установка>Установка</h2><h5 id=1-получение-дистрибутива>1. Получение дистрибутива</h5><p>Подразумевается, что у вас есть доступ к порталу загрузки продуктов Qlik и вы уже скачали zip файл. Например он может называться как-то так: <em>QlikWebConnectorsDecember2020Patch2.zip</em>.
+Пользователи Qlik Sense или Qlik View с активной подпиской/поддержкой могут перейти на портал загрузки по кнопке <strong>Download Qlik Product</strong> в правом верхнем углу сайта.</p><p><img src=select_product.png alt=select_product></p><h5 id=2-разблокируйте-zip-файл>2. Разблокируйте zip-файл</h5><p>Этап который не стоит пропускать, но некоторые склонны его игнорировать! После загрузки ZIP-файла необходимо установить чек-бокс <strong>&ldquo;Разблокировать&rdquo;</strong></p><p><img src=remove_download.png alt=step_2></p><h5 id=3-распакуйте-архив-в-папку>3. Распакуйте архив в папку</h5><p>В моем примере: <strong>c:\WebConnector</strong></p><p><img src=all_files.png alt=step_3></p><h5 id=4-определяемся-со-сценарием-использования>4. Определяемся со сценарием использования</h5><p>На этом этапе вы можете начать использовать коннекторы если вы единственный пользователь и нет задачи настроить авторизацию и ограничить доступ к функционалу.
+В таком случае можете сразу переходить к последнему пункту.</p><p>В противном случае необходима дополнительная настройка.</p><h5 id=5-установка-и-запуск-web-connectors-как-windows-service>5. Установка и запуск Web Connectors как Windows Service</h5><p>Переходим в каталог <strong>BatchFiles</strong>:</p><p><img src=batch_files.png alt=Step_5></p><p>Перед запуском необходимо проверить корректность путей в bat-файле. Откройте файл <strong>Install Service.bat</strong> в любом текстовом редакторе и убедитесь, что указаны правильные пути:
+Путь к фреймворку Microsoft.NET у вас может быть другой.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bat data-lang=bat><span style=display:flex><span><span style=color:#75715e>REM *****************************</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>REM IMPORTANT - PLEASE READ:</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>REM * You should ensure than you have &#39;unblocked&#39; the Qlik Web Connectors download zip file BEFORE unzipping it and running this.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>REM * You need to change the following paths to match your .NET installation directory and QlikWebConnectorsSVC.exe location.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>REM * You should run this file as Administrator (right click, &#39;Run as administrator&#39;).</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>REM *****************************</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#34;</span>%windir%<span style=color:#e6db74>\Microsoft.NET\Framework\v4.0.30319\installutil&#34;</span> <span style=color:#e6db74>&#34;c:\WebConnector\QlikWebConnectorsSVC.exe&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pause</span>
 </span></span></code></pre></div><p>Возможна у вас уже был установлен этот сервис с другими путями или вы хотите переустановить службу. Тогда запустите оснастку &ldquo;services.msc&rdquo; и если видите в списке сервисов
 упоминание Qlik Web Connectors, то выполните <strong>от имени Администратора</strong> указанную команду:
-<img src="remove_service.png" alt="remove_service"></p>
-<p>Запускаем файл <strong>Install Service.bat</strong> в режиме <strong>Запуск от имени Администратора</strong>
-<img src="run_as_admin.png" alt="Step_5.1"></p>
-<p><img src="run_batch_file.png" alt="Step_5.2"></p>
-<p>Если на этом этапе возникли ошибки, то, как правило, вы или не разблокировали zip (шаг 2) или не исправили пути в bat-файле. Проверьте все еще раз.</p>
-<h5 id="6-запуск-сервиса">6. Запуск сервиса</h5>
-<p>В оснастке &ldquo;services.msc&rdquo; у вас должна появиться служба Qlik Web Connectors. Запускаем правой кнопкой мыши:</p>
-<p><img src="run_service.png" alt="run_service"></p>
-<p>Если сервис стартует и сразу останавивается, то мне известны две причины (их разумеется больше):</p>
-<ul>
-<li>Имеется уже запущенная копия Web Connectors возможно запущенная вручную - проверьте задачи в трее и остановите работающий экземпляр.</li>
-<li>Не достаточно прав для захвата 5555/tcp порта. В этом случае рекомендуется создать аккаунт и добавить его в группу <strong>Администраторы</strong>. После этого на вкладке сервиса
-&ldquo;Вход в систему&rdquo; указываем логин и пароль созданного аккаунта:</li>
-</ul>
-<p><img src="change_account.png" alt="change_account"></p>
-<p>Подробности о неудачном запуске службы можно узнать в лог-файле <strong>Service_Startup_Log.txt</strong>, который находится в папке WebConnector.</p>
-<h6 id="7-подключение-к-qlik-web-connectors">7. Подключение к Qlik Web Connectors</h6>
-<p>На компьютере с установленным Qlik Web Connectors открываем браузер и переходим по адресу <a href="http://localhost:5555">http://localhost:5555</a>
-Читаем и принимаем лицензионное соглашение и получаем доступ к административной консоли.</p>
-<p><img src="first_run.png" alt="first_run"></p>
-<h2 id="поздравляю">Поздравляю!</h2>
-<p>Бандл установлен и готов к дальнейшей работе.
-Смотрите <a href="/post/qlik/configure_qlik_web_connectors/">вторую часть статьи</a> для того чтобы разобраться с настройкой пакета.</p>
-		</div>
-		<footer class="post__footer">
-			
-<div class="post__tags tags clearfix">
-	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/qlik/" rel="tag">Qlik</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/bi/" rel="tag">BI</a>
-		</li>
-	</ul>
-</div>
-		</footer>
-	</article>
-</main>
-
-
-<nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/airflow/airflow2_install/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Назад</span>
-			<p class="pager__title">Apache Airflow 1/3. Установка и первые шаги</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/qlik/configure_qlik_web_connectors/" rel="next">
-			<span class="pager__subtitle">Вперед&thinsp;»</span>
-			<p class="pager__title">Qlik Web Connectors 2/2. Конфигурирование</p>
-		</a>
-	</div>
-</nav>
-
-
-			</div>
-			<aside class="sidebar"><div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
-		<label>
-			<input class="widget-search__field" type="search" placeholder="ПОИСК…" value="" name="q" aria-label="ПОИСК…">
-		</label>
-		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
-	</form>
-</div>
-<div class="widget-recent widget">
-	<h4 class="widget__title">Недавние публикации</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/airflow/airflow2_install_with_docker/">Apache Airflow 2/3. Установка с использованием Docker</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/qlik/configure_qlik_web_connectors/">Qlik Web Connectors 2/2. Конфигурирование</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/qlik/install_qlik_web_connectors/">Qlik Web Connectors 1/2. Установка</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/airflow/airflow2_install/">Apache Airflow 1/3. Установка и первые шаги</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/docker/docker/">Использование Docker для разработки на Python 1/2</a></li>
-		</ul>
-	</div>
-</div>
-<div class="widget-categories widget">
-	<h4 class="widget__title">Категории</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/bi/">BI</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/data/">Data</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/development/">Development</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/web/">Web</a></li>
-		</ul>
-	</div>
-</div>
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Теги</h4>
-	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/airflow/" title="Airflow">Airflow</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/bi/" title="BI">BI</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/blog/" title="blog">blog</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/datascience/" title="Datascience">Datascience</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/docker/" title="Docker">Docker</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/git/" title="git">git</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/qlik/" title="Qlik">Qlik</a>
-	</div>
-</div>
-<div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">Социальные сети</h4>
-	<div class="widget-social__content widget__content">
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/ideabi.ru" target="_blank">
-				<svg class="widget-social__link-icon icon icon-facebook" width="24" height="24" viewBox="0 0 352 352"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
-				<span>Facebook</span>
-			</a>
-		</div>
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/ideacompru" target="_blank">
-				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
-				<span>Twitter</span>
-			</a>
-		</div>
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Telegram" rel="noopener noreferrer" href="https://t.me/deviatov" target="_blank">
-				<svg class="widget-social__link-icon icon icon-telegram" width="24" height="24" viewBox="0 0 132 110"><path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg>
-				<span>Telegram</span>
-			</a>
-		</div>
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/mdeviatov" target="_blank">
-				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
-				<span>GitHub</span>
-			</a>
-		</div>
-
-		
-	</div>
-</div>
-</aside>
-		</div>
-		<footer class="footer">
-	<div class="container footer__container flex">
-		
-		<div class="footer__copyright">
-			&copy; 2022 Maxim N. Deviatov.
-			<span class="footer__copyright-credits">Сгенерировано с использованием <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> и темы <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
-		</div>
-	</div>
-</footer>
-	</div>
-<script async defer src="/js/menu.js"></script>
-</body>
-</html>
+<img src=remove_service.png alt=remove_service></p><p>Запускаем файл <strong>Install Service.bat</strong> в режиме <strong>Запуск от имени Администратора</strong>
+<img src=run_as_admin.png alt=Step_5.1></p><p><img src=run_batch_file.png alt=Step_5.2></p><p>Если на этом этапе возникли ошибки, то, как правило, вы или не разблокировали zip (шаг 2) или не исправили пути в bat-файле. Проверьте все еще раз.</p><h5 id=6-запуск-сервиса>6. Запуск сервиса</h5><p>В оснастке &ldquo;services.msc&rdquo; у вас должна появиться служба Qlik Web Connectors. Запускаем правой кнопкой мыши:</p><p><img src=run_service.png alt=run_service></p><p>Если сервис стартует и сразу останавивается, то мне известны две причины (их разумеется больше):</p><ul><li>Имеется уже запущенная копия Web Connectors возможно запущенная вручную - проверьте задачи в трее и остановите работающий экземпляр.</li><li>Не достаточно прав для захвата 5555/tcp порта. В этом случае рекомендуется создать аккаунт и добавить его в группу <strong>Администраторы</strong>. После этого на вкладке сервиса
+&ldquo;Вход в систему&rdquo; указываем логин и пароль созданного аккаунта:</li></ul><p><img src=change_account.png alt=change_account></p><p>Подробности о неудачном запуске службы можно узнать в лог-файле <strong>Service_Startup_Log.txt</strong>, который находится в папке WebConnector.</p><h6 id=7-подключение-к-qlik-web-connectors>7. Подключение к Qlik Web Connectors</h6><p>На компьютере с установленным Qlik Web Connectors открываем браузер и переходим по адресу <a href=http://localhost:5555>http://localhost:5555</a>
+Читаем и принимаем лицензионное соглашение и получаем доступ к административной консоли.</p><p><img src=first_run.png alt=first_run></p><h2 id=поздравляю>Поздравляю!</h2><p>Бандл установлен и готов к дальнейшей работе.
+Смотрите <a href=https://blog.ideabi.ru/post/qlik/configure_qlik_web_connectors/>вторую часть статьи</a> для того чтобы разобраться с настройкой пакета.</p></div><footer class=post__footer><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/qlik/ rel=tag>Qlik</a></li><li class=tags__item><a class="tags__link btn" href=/tags/bi/ rel=tag>BI</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/post/airflow/airflow2_install/ rel=prev><span class=pager__subtitle>«&#8201;Назад</span><p class=pager__title>Apache Airflow 1/3. Установка и первые шаги</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/post/qlik/configure_qlik_web_connectors/ rel=next><span class=pager__subtitle>Вперед&#8201;»</span><p class=pager__title>Qlik Web Connectors 2/2. Конфигурирование</p></a></div></nav><section class=comments><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//maximdeviatov.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></section></div><aside class=sidebar><div class="widget-recent widget"><h4 class=widget__title>Недавние публикации</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/post/airflow/airflow2_install_with_docker/>Apache Airflow 2/3. Установка с использованием Docker</a></li><li class=widget__item><a class=widget__link href=/post/qlik/configure_qlik_web_connectors/>Qlik Web Connectors 2/2. Конфигурирование</a></li><li class=widget__item><a class=widget__link href=/post/qlik/install_qlik_web_connectors/>Qlik Web Connectors 1/2. Установка</a></li><li class=widget__item><a class=widget__link href=/post/airflow/airflow2_install/>Apache Airflow 1/3. Установка и первые шаги</a></li><li class=widget__item><a class=widget__link href=/post/docker/docker/>Использование Docker для разработки на Python 1/2</a></li></ul></div></div><div class="widget-categories widget"><h4 class=widget__title>Категории</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/categories/bi/>BI</a></li><li class=widget__item><a class=widget__link href=/categories/data/>Data</a></li><li class=widget__item><a class=widget__link href=/categories/development/>Development</a></li><li class=widget__item><a class=widget__link href=/categories/web/>Web</a></li></ul></div></div><div class="widget-taglist widget"><h4 class=widget__title>Теги</h4><div class=widget__content><a class="widget-taglist__link widget__link btn" href=/tags/airflow/ title=Airflow>Airflow</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bi/ title=BI>BI</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/blog/ title=blog>blog</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/datascience/ title=Datascience>Datascience</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/docker/ title=Docker>Docker</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/hugo/ title=hugo>hugo</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/python/ title=Python>Python</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/qlik/ title=Qlik>Qlik</a></div></div><div class="widget-social widget"><h4 class="widget-social__title widget__title">Социальные сети</h4><div class="widget-social__content widget__content"><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Telegram rel="noopener noreferrer" href=https://t.me/deviatov target=_blank><svg class="widget-social__link-icon icon icon-telegram" width="24" height="24" viewBox="0 0 132 110"><path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg><span>Telegram</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=GitHub rel="noopener noreferrer" href=https://github.com/mdeviatov target=_blank><svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0C85.9.0.0 85.8.0 191.7c0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2.0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8.0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7.0.0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4.0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5.0 25.6-.2 46.3-.2 52.6.0 5.1 3.5 11.1 13.2 9.2C329 348.2 384 276.4 384 191.7 384 85.8 298 0 192 0z"/></svg><span>GitHub</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Email href=mailto:mdeviatov@gmail.com><svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16V16 0h-16H16 0zm347 16-139 92.5L69 32zM199 157.5l9 5.5 9-5.5L384 46v210H32V46z"/></svg><span>mdeviatov@gmail.com</span></a></div></div></div><div class="widget-languages widget"><h4 class=widget__title>Языки</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class="widget-languages__link widget__link" href=/><span class="widget-languages__link-btn widget__link-btn btn">RU</span></a></li><li class=widget__item><a class="widget-languages__link widget__link" href=/en/><span class="widget-languages__link-btn widget__link-btn btn">EN</span></a></li></ul></div></div><div class="widget-search widget"><form class=widget-search__form role=search method=get action=https://google.com/search><label><input class=widget-search__field type=search placeholder=ПОИСК… name=q aria-label=ПОИСК…></label>
+<input class=widget-search__submit type=submit value=Search>
+<input type=hidden name=sitesearch value=https://blog.ideabi.ru/></form></div></aside></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Maxim N. Deviatov.
+<span class=footer__copyright-credits>Сгенерировано с использованием <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> и темы <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

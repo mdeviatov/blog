@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>blog on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
-    <link>/tags/blog/</link>
-    <description>Recent content in blog on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ru</language>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Планы по статьям</title>
-      <link>/post/plany-na-posty/</link>
-      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/plany-na-posty/</guid>
-      <description>&lt;p&gt;В связи с тем, что мои интересы все больше смещаются в сторону кодинга и управления данными,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>blog on IDEA</title><link>https://blog.ideabi.ru/tags/blog/</link><description>Recent content in blog on IDEA</description><generator>Hugo -- gohugo.io</generator><language>ru</language><lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.ideabi.ru/tags/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Планы по статьям</title><link>https://blog.ideabi.ru/post/plany-na-posty/</link><pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/plany-na-posty/</guid><description>&lt;p>В связи с тем, что мои интересы все больше смещаются в сторону кодинга и управления данными,
 планирую делать публикации прежде всего о соответствующих решениях.
-И этот пост - попытка планирования)&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+И этот пост - попытка планирования)&lt;/p></description></item></channel></rss>

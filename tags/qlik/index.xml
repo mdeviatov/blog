@@ -1,32 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Qlik on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
-    <link>/tags/qlik/</link>
-    <description>Recent content in Qlik on Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ru</language>
-    <lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/qlik/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Qlik Web Connectors 2/2. Конфигурирование</title>
-      <link>/post/qlik/configure_qlik_web_connectors/</link>
-      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/qlik/configure_qlik_web_connectors/</guid>
-      <description>&lt;p&gt;Вторая часть статьи - рассматриваем более тонкую настройку Qlik Web Connectors для использования в многопользовательском режиме.
-Начало в &lt;a href=&#34;/post/qlik/install_qlik_web_connectors/&#34;&gt;первой части&lt;/a&gt;, описывающей процедуру установки бандла, возможные ошибки, способы их преодоления и запуск.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Qlik Web Connectors 1/2. Установка</title>
-      <link>/post/qlik/install_qlik_web_connectors/</link>
-      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/qlik/install_qlik_web_connectors/</guid>
-      <description>&lt;p&gt;В Qlik Sense &amp;ldquo;из коробки&amp;rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Qlik on IDEA</title><link>https://blog.ideabi.ru/tags/qlik/</link><description>Recent content in Qlik on IDEA</description><generator>Hugo -- gohugo.io</generator><language>ru</language><lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.ideabi.ru/tags/qlik/index.xml" rel="self" type="application/rss+xml"/><item><title>Qlik Web Connectors 2/2. Конфигурирование</title><link>https://blog.ideabi.ru/post/qlik/configure_qlik_web_connectors/</link><pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/qlik/configure_qlik_web_connectors/</guid><description>&lt;p>Вторая часть статьи - рассматриваем более тонкую настройку Qlik Web Connectors для использования в многопользовательском режиме.
+Начало в &lt;a href="https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/">первой части&lt;/a>, описывающей процедуру установки бандла, возможные ошибки, способы их преодоления и запуск.&lt;/p></description></item><item><title>Qlik Web Connectors 1/2. Установка</title><link>https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/</link><pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate><guid>https://blog.ideabi.ru/post/qlik/install_qlik_web_connectors/</guid><description>&lt;p>В Qlik Sense &amp;ldquo;из коробки&amp;rdquo; доступно порядка трех десятков коннекторов к различным сервисам и базам данных. Почти всем известно,
 что существуют дополнительные пакеты коннекторов? распространяемые отдельно самой Qlik Tech и/или сторонними разработчиками.
-Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+Как раз таким пакетом является Qlik Web Connectors который содержит дополнительные коннекторы, которые можно использовать из Qlik Sense Enterprise или Qlik View.&lt;/p></description></item></channel></rss>

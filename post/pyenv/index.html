@@ -1,409 +1,145 @@
-<!DOCTYPE html>
-<html class="no-js" lang="ru">
-<head>
-	<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
-  <link rel="dns-prefetch" href='https://www.googletagmanager.com'>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-NF6XD6B');</script>
-
-
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Несколько версий Python. Установка и использование pyenv. - Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Несколько версий Python. Установка и использование pyenv."/>
-<meta name="twitter:description" content="Предназначение pyenv
+<!doctype html><html class=no-js lang=ru><head><link href=https://www.googletagmanager.com rel=preconnect crossorigin><link rel=dns-prefetch href=https://www.googletagmanager.com><script>(function(e,t,n,s,o){e[s]=e[s]||[],e[s].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var a=t.getElementsByTagName(n)[0],i=t.createElement(n),r=s!="dataLayer"?"&l="+s:"";i.async=!0,i.src="//www.googletagmanager.com/gtm.js?id="+o+r,a.parentNode.insertBefore(i,a)})(window,document,"script","dataLayer","GTM-NF6XD6B")</script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>Несколько версий Python. Установка и использование pyenv. - IDEA</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content><meta property="og:title" content="Несколько версий Python. Установка и использование pyenv."><meta property="og:description" content="Предназначение pyenv
 Пакет pyenv для меня решает две основные задачи:
 
 Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.
 Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
 как-то интегрирована какая-то версия Python.
-"/>
+"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.ideabi.ru/post/pyenv/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-05-13T00:00:00+00:00"><meta property="article:modified_time" content="2021-05-13T00:00:00+00:00"><meta property="og:site_name" content="IDEA"><meta itemprop=name content="Несколько версий Python. Установка и использование pyenv."><meta itemprop=description content="Предназначение pyenv
+Пакет pyenv для меня решает две основные задачи:
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="dns-prefetch" href="//fonts.googleapis.com">
-	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
+Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.
+Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
+как-то интегрирована какая-то версия Python.
+"><meta itemprop=datePublished content="2021-05-13T00:00:00+00:00"><meta itemprop=dateModified content="2021-05-13T00:00:00+00:00"><meta itemprop=wordCount content="909"><meta itemprop=keywords content="python,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Несколько версий Python. Установка и использование pyenv."><meta name=twitter:description content="Предназначение pyenv
+Пакет pyenv для меня решает две основные задачи:
 
-	<link rel="stylesheet" href="/css/style.css">
-	
-
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-</head>
-<body class="body">
-
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NF6XD6B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-	<div class="container container--outer">
-		<header class="header">
-	<div class="container header__container">
-		
-	<div class="logo logo--mixed">
-		<a class="logo__link" href="/" title="Блог IDEA" rel="home">
-			<div class="logo__item logo__imagebox">
-					<img class="logo__img" src="/img/IDEA-0.png">
-				</div><div class="logo__item logo__text">
-					<div class="logo__title">Блог IDEA</div>
-					<div class="logo__tagline">Пишем про бизнес-аналитику, данные, кодинг и немного DevOps</div>
-				</div>
-		</a>
-	</div>
-		
-<nav class="menu">
-	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
-		<span class="menu__btn-title" tabindex="-1">Меню</span>
-	</button>
-	<ul class="menu__list">
-		<li class="menu__item">
-			<a class="menu__link" href="/post">
-				
-				<span class="menu__text">Блог</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/about">
-				
-				<span class="menu__text">Авторы</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/projects">
-				
-				<span class="menu__text">Проекты</span>
-				
-			</a>
-		</li>
-	</ul>
-</nav>
-
-	</div>
-</header>
-		<div class="wrapper flex">
-			<div class="primary">
-			
-<main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">Несколько версий Python. Установка и использование pyenv.</h1>
-			<div class="post__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Максим Девятов</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-05-13T00:00:00Z">13-05-2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
-		</header>
-<div class="post__toc toc">
-	<div class="toc__title">Содержимое страницы</div>
-	<div class="toc__menu">
-		<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#предназначение-pyenv">Предназначение pyenv</a></li>
-        <li><a href="#установка-pyenv-для-ubuntu-linux-mac">Установка pyenv для Ubuntu Linux/ Mac</a></li>
-      </ul>
-    </li>
-    <li><a href="#использование-pyenv-в-ubuntu-linux-mac">Использование pyenv в Ubuntu Linux/ Mac</a>
-      <ul>
-        <li></li>
-        <li><a href="#заключение">Заключение</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-	</div>
-</div><div class="content post__content clearfix">
-			<h3 id="предназначение-pyenv">Предназначение pyenv</h3>
-<p>Пакет <strong>pyenv</strong> для меня решает две основные задачи:</p>
-<ul>
-<li>Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.</li>
-<li>Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
-как-то интегрирована какая-то версия Python.</li>
-</ul>
-<p><strong>Что это означает на практике?</strong></p>
-<p>Например вы используете для продакшна версию 3.8.2 и вместе с этим появилось желание новые проекты переводить на на версию 3.9.5,
+Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.
+Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
+как-то интегрирована какая-то версия Python.
+"><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico><script async src="https://www.googletagmanager.com/gtag/js?id=G-V9SBB1KX2Y"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-V9SBB1KX2Y",{anonymize_ip:!1})}</script></head><body class=body><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NF6XD6B" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class="container container--outer"><header class=header><div class="container header__container"><div class="logo logo--mixed"><a class=logo__link href=/ title=IDEA rel=home><div class="logo__item logo__imagebox"><img class=logo__img src=/img/IDEA-0.png></div><div class="logo__item logo__text"><div class=logo__title>IDEA</div><div class=logo__tagline>Блог о проектах и разработке</div></div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Меню</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/post><span class=menu__text>Блог</span></a></li><li class=menu__item><a class=menu__link href=/collaboration><span class=menu__text>Сотрудничество</span></a></li><li class=menu__item><a class=menu__link href=/projects><span class=menu__text>Проекты</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>Несколько версий Python. Установка и использование pyenv.</h1><div class="post__meta meta"><div class="meta__item-author meta__item"><svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2.0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class=meta__text>Максим Девятов</span></div><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-05-13T00:00:00Z>13-05-2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/development/ rel=category>Development</a></span></div></div></header><div class="post__toc toc"><div class=toc__title>Содержимое страницы</div><div class=toc__menu><nav id=TableOfContents><ul><li><ul><li><a href=#предназначение-pyenv>Предназначение pyenv</a></li><li><a href=#установка-pyenv-для-ubuntu-linux-mac>Установка pyenv для Ubuntu Linux/ Mac</a></li></ul></li><li><a href=#использование-pyenv-в-ubuntu-linux-mac>Использование pyenv в Ubuntu Linux/ Mac</a><ul><li></li><li><a href=#заключение>Заключение</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix"><h3 id=предназначение-pyenv>Предназначение pyenv</h3><p>Пакет <strong>pyenv</strong> для меня решает две основные задачи:</p><ul><li>Удобное, быстрое, комфортное управление установленными версиями интерпретатора Python.</li><li>Сохранение целостности и работоспособности операционной системы в которую, как правило, уже
+как-то интегрирована какая-то версия Python.</li></ul><p><strong>Что это означает на практике?</strong></p><p>Например вы используете для продакшна версию 3.8.2 и вместе с этим появилось желание новые проекты переводить на на версию 3.9.5,
 которая вышла несколько дней назад.
 Есть риски что вы можете сломать зависимости в проектах, настройки путей, да мало-ли какие бывают странности.
-Так вот, pyenv даст возможность видеть список доступных версий/дистрибутивов Python, установить, переключаться между версиями и не только.</p>
-<p>Например, вы можете выбрать <strong>дефолтную</strong> версию для системы в целом и какие-то другие версии для отдельных проектов.
-Причем выбор конкретной версии интерпретатора будет происходить автоматически при смене каталога.</p>
-<p>Это реальная ситуация присутствует и на Маках и на Линуксе. Было много историй, когда при обновлении
+Так вот, pyenv даст возможность видеть список доступных версий/дистрибутивов Python, установить, переключаться между версиями и не только.</p><p>Например, вы можете выбрать <strong>дефолтную</strong> версию для системы в целом и какие-то другие версии для отдельных проектов.
+Причем выбор конкретной версии интерпретатора будет происходить автоматически при смене каталога.</p><p>Это реальная ситуация присутствует и на Маках и на Линуксе. Было много историй, когда при обновлении
 версии Python например перестает работать менеджер пакетов <strong>apt</strong>. Значит есть необходимость максимально исключить зависимости между
-ОС и интерпретаторами Python.</p>
-<h3 id="установка-pyenv-для-ubuntu-linux-mac">Установка pyenv для Ubuntu Linux/ Mac</h3>
-<h5 id="1-загружаем-pyenvhttpsgithubcompyenvpyenv">1. Загружаем <a href="https://github.com/pyenv/pyenv">pyenv</a></h5>
-<p>Будет не лишним прочитать документацию в разделе <a href="https://github.com/pyenv/pyenv#installation">Installation</a></p>
-<p>Приведенные команды дадут вам установленный в домашний каталог пользователя пакет pyenv, который необходимо будет еще поднастроить
-на втором этапе.</p>
-<p>Ubuntu &amp; Mac, рекоменуемый способ установки:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Linux:</span>
-</span></span><span style="display:flex;"><span>$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+ОС и интерпретаторами Python.</p><h3 id=установка-pyenv-для-ubuntu-linux-mac>Установка pyenv для Ubuntu Linux/ Mac</h3><h5 id=1-загружаем-pyenvhttpsgithubcompyenvpyenv>1. Загружаем <a href=https://github.com/pyenv/pyenv>pyenv</a></h5><p>Будет не лишним прочитать документацию в разделе <a href=https://github.com/pyenv/pyenv#installation>Installation</a></p><p>Приведенные команды дадут вам установленный в домашний каталог пользователя пакет pyenv, который необходимо будет еще поднастроить
+на втором этапе.</p><p>Ubuntu & Mac, рекоменуемый способ установки:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Linux:</span>
+</span></span><span style=display:flex><span>$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 </span></span></code></pre></div><p>Альтернативный, но, с моей точки зрения менее правильный вариант для Мака. Связано это с тем, что новые версии могут появляться с
-опозданием:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># MacOS:</span>
-</span></span><span style="display:flex;"><span>% brew update
-</span></span><span style="display:flex;"><span>% brew install pyenv
-</span></span></code></pre></div><h5 id="2-настройки-окружения">2. Настройки окружения</h5>
-<p>Дополним переменную PATH для поиска исполняемых файлов pyenv:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Linux:</span>
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.bashrc
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;eval &#34;$(pyenv init --path)&#34;&#39;</span> &gt;&gt; ~/.bashrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># MacOS:</span>
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.zshrc
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#39;eval &#34;$(pyenv init --path)&#34;&#39;</span> &gt;&gt; ~/.zshrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Linux:</span>
-</span></span><span style="display:flex;"><span>$ echo -e <span style="color:#e6db74">&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &#34;$(pyenv init -)&#34;\nfi&#39;</span> &gt;&gt; ~/.bashrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># MacOS</span>
-</span></span><span style="display:flex;"><span>% echo -e <span style="color:#e6db74">&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &#34;$(pyenv init -)&#34;\nfi&#39;</span> &gt;&gt; ~/.zshrc
+опозданием:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># MacOS:</span>
+</span></span><span style=display:flex><span>% brew update
+</span></span><span style=display:flex><span>% brew install pyenv
+</span></span></code></pre></div><h5 id=2-настройки-окружения>2. Настройки окружения</h5><p>Дополним переменную PATH для поиска исполняемых файлов pyenv:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Linux:</span>
+</span></span><span style=display:flex><span>$ echo <span style=color:#e6db74>&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style=display:flex><span>$ echo <span style=color:#e6db74>&#39;export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style=display:flex><span>$ echo <span style=color:#e6db74>&#39;eval &#34;$(pyenv init --path)&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># MacOS:</span>
+</span></span><span style=display:flex><span>$ echo <span style=color:#e6db74>&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span style=display:flex><span>$ echo <span style=color:#e6db74>&#39;export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span style=display:flex><span>$ echo <span style=color:#e6db74>&#39;eval &#34;$(pyenv init --path)&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Linux:</span>
+</span></span><span style=display:flex><span>$ echo -e <span style=color:#e6db74>&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &#34;$(pyenv init -)&#34;\nfi&#39;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># MacOS</span>
+</span></span><span style=display:flex><span>% echo -e <span style=color:#e6db74>&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &#34;$(pyenv init -)&#34;\nfi&#39;</span> &gt;&gt; ~/.zshrc
 </span></span></code></pre></div><p>После этого шага необходимо закрыть консоль (разлогиниться) и зайти вновь для того чтобы сделанные изменения применились.
-На этом почти все готово, но есть нюанс&hellip;</p>
-<h5 id="3-установка-pyenv-virtualenv">3. Установка pyenv-virtualenv</h5>
-<blockquote>
-<p><strong>Необязательный этап</strong><br>
-Возможно вам понадобится еще одно дополнение для pyenv, которое позволит настраивать виртуализацию среды Python для каких-либо
-конкретных приложений. В моем случае этот способ удобен для использования <a href="https://neovim.io">NeoVim</a>. А у меня интеграция с редактором настроена для
-разработки кода Python и установленные плагины тоже активно используют Python.</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Linux:</span>
-</span></span><span style="display:flex;"><span>$ git clone https://github.com/pyenv/pyenv-virtualenv.git <span style="color:#66d9ef">$(</span>pyenv root<span style="color:#66d9ef">)</span>/plugins/pyenv-virtualenv
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># MacOS:</span>
-</span></span><span style="display:flex;"><span>% brew install pyenv-virtualenv
-</span></span></code></pre></div><h2 id="использование-pyenv-в-ubuntu-linux-mac">Использование pyenv в Ubuntu Linux/ Mac</h2>
-<p>Первым делом мы хотим установить в систему одну или несколько версий интерпретатора. Нужно определиться с версией.
-Это сделать легко:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Например, мы ищем доступные версии в ветке 3.9</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ pyenv install --list | grep 3.9
-</span></span><span style="display:flex;"><span>  3.9.0
-</span></span><span style="display:flex;"><span>  3.9-dev
-</span></span><span style="display:flex;"><span>  3.9.1
-</span></span><span style="display:flex;"><span>  3.9.2
-</span></span><span style="display:flex;"><span>  3.9.3
-</span></span><span style="display:flex;"><span>  3.9.4
-</span></span><span style="display:flex;"><span>  3.9.5
-</span></span><span style="display:flex;"><span>  miniconda-3.9.1
-</span></span><span style="display:flex;"><span>  miniconda3-3.9.1
-</span></span><span style="display:flex;"><span>  miniconda3-3.9-4.9.2
-</span></span></code></pre></div><h5 id="установка-выбранной-версии-395">Установка выбранной версии (3.9.5):</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pyenv install 3.9.5 
-</span></span><span style="display:flex;"><span>Downloading Python-3.9.5.tar.xz...
-</span></span><span style="display:flex;"><span>-&gt; https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tar.xz
-</span></span><span style="display:flex;"><span>Installing Python-3.9.5...
-</span></span><span style="display:flex;"><span>Installed Python-3.9.5 to /home/user/.pyenv/versions/3.9.5
-</span></span></code></pre></div><blockquote>
-<p><strong>Если произошла ошибка</strong><br>
-В этом месте у некоторых возникает ошибка связанная с отсутствием установленного
-компилятора GCC или с наличием каких-то других неудовлетворенных зависимостей:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>checking <span style="color:#66d9ef">for</span> gcc... no
-</span></span><span style="display:flex;"><span>checking <span style="color:#66d9ef">for</span> cc... no
-</span></span><span style="display:flex;"><span>checking <span style="color:#66d9ef">for</span> cl.exe... no
-</span></span><span style="display:flex;"><span>configure: error: in <span style="color:#e6db74">`</span>/tmp/python-build.20210518150017.23041/Python-3.9.5<span style="color:#960050;background-color:#1e0010">&#39;</span>:
-</span></span><span style="display:flex;"><span>configure: error: no acceptable C compiler found in $PATH
-</span></span></code></pre></div><p>Скорее всего это говорит о том, что необходимо установить зависимости. На <a href="https://github.com/pyenv/pyenv/wiki#suggested-build-environment">GitHub</a>
-есть вся необходимая информация как исправить эту ситуацию:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ubuntu Linux  </span>
-</span></span><span style="display:flex;"><span>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># MacOS</span>
-</span></span><span style="display:flex;"><span>brew install openssl readline sqlite3 xz zlib
-</span></span></code></pre></div><p>После этого необходимо повторить установку дистрибутива Python</p>
-</blockquote>
-<h5 id="просмотр-установленных-версий-интерпретатора">Просмотр установленных версий интерпретатора:</h5>
-<p>В примере ниже видно, что на Маке установлены три версии интерпретатора, и активной (дефолтной) является версия 2.7.18. Активной эта версия
-стала из-за того что я перешел в каталог который настроен для использования именно этой версии Python:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pyenv versions
-</span></span><span style="display:flex;"><span>  system
-</span></span><span style="display:flex;"><span>* 2.7.18 <span style="color:#f92672">(</span>set by /Users/user/work/py_env/.python-version<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  2.7.18/envs/pynvim2
-</span></span><span style="display:flex;"><span>  2.8
-</span></span><span style="display:flex;"><span>  3.9.4
-</span></span><span style="display:flex;"><span>  3.9.4/envs/2.8
-</span></span><span style="display:flex;"><span>  3.9.4/envs/pynvim3
-</span></span><span style="display:flex;"><span>  pynvim2
-</span></span><span style="display:flex;"><span>  pynvim3
-</span></span></code></pre></div><h5 id="настроить-каталог-на-определенную-версию-python">Настроить каталог на определенную версию Python</h5>
-<p>Это делается с помощью команды:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Устанавливается локальная версия Python 3.9.4</span>
-</span></span><span style="display:flex;"><span>$ pyenv local 3.9.4
-</span></span><span style="display:flex;"><span>$ python3 --version
-</span></span><span style="display:flex;"><span>Python 3.9.4
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#  Можно указать сразу две версии:</span>
-</span></span><span style="display:flex;"><span>$ pyenv local 3.9.4 2.7.18
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Если глобально установлена версия 3.9.2, то при отсутствии </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># иного указания будет использоваться глобальная версия:</span>
-</span></span><span style="display:flex;"><span>$ pyenv local 2.7.18
-</span></span><span style="display:flex;"><span>$ python --version
-</span></span><span style="display:flex;"><span>Python 2.7.18
-</span></span><span style="display:flex;"><span>$ python3 --version
-</span></span><span style="display:flex;"><span>Python 3.9.2				<span style="color:#75715e"># Глобальная версия версия Python 3.9.2</span>
-</span></span></code></pre></div><h5 id="установка-глобальной-дефолтной-версии-python">Установка глобальной (дефолтной) версии Python</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>% pyenv global 2.8
-</span></span><span style="display:flex;"><span>% pyenv versions
-</span></span><span style="display:flex;"><span>  system
-</span></span><span style="display:flex;"><span>  2.7.18
-</span></span><span style="display:flex;"><span>  2.7.18/envs/pynvim2
-</span></span><span style="display:flex;"><span>* 2.8 <span style="color:#f92672">(</span>set by /Users/dmn/.pyenv/version<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  3.9.4
-</span></span><span style="display:flex;"><span>  3.9.4/envs/2.8
-</span></span><span style="display:flex;"><span>  3.9.4/envs/pynvim3
-</span></span><span style="display:flex;"><span>  pynvim2
-</span></span><span style="display:flex;"><span>  pynvim3
-</span></span></code></pre></div><p>В каком сценарии удобно использовать плагин pyenv-virtualenv<br>
-В случае с Neovim, мы указываем путь к интерпретатору который нам возвращает команда <code> pyenv which python</code> после активации.
-То есть Neovim бужет вызывать явно указанный нами интерпретатор работающий в отдельном виртуальном окружении.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pyenv virtualenv 3.9.5 pynvim3
-</span></span><span style="display:flex;"><span>$ pyenv activate pynvim3
-</span></span><span style="display:flex;"><span>pyenv-virtualenv: prompt changing will be removed from future release. configure <span style="color:#e6db74">`</span>export PYENV_VIRTUALENV_DISABLE_PROMPT<span style="color:#f92672">=</span>1<span style="color:#960050;background-color:#1e0010">&#39;</span> to simulate the behavior.
-</span></span><span style="display:flex;"><span>$ python3 -m pip install pynvim
-</span></span><span style="display:flex;"><span>$ pyenv which python
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Обратите внимание по какому пути будет вызван интерпретатор:</span>
-</span></span><span style="display:flex;"><span>$ pyenv which python
-</span></span><span style="display:flex;"><span>/home/user/.pyenv/versions/pynvim3/bin/python
-</span></span></code></pre></div><h3 id="заключение">Заключение</h3>
-<p>Использование pyenv очень желательно и лично мной рекомендуется в ситуации, когда в операционной системе уже установлена
+На этом почти все готово, но есть нюанс&mldr;</p><h5 id=3-установка-pyenv-virtualenv>3. Установка pyenv-virtualenv</h5><blockquote><p><strong>Необязательный этап</strong><br>Возможно вам понадобится еще одно дополнение для pyenv, которое позволит настраивать виртуализацию среды Python для каких-либо
+конкретных приложений. В моем случае этот способ удобен для использования <a href=https://neovim.io>NeoVim</a>. А у меня интеграция с редактором настроена для
+разработки кода Python и установленные плагины тоже активно используют Python.</p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Linux:</span>
+</span></span><span style=display:flex><span>$ git clone https://github.com/pyenv/pyenv-virtualenv.git <span style=color:#66d9ef>$(</span>pyenv root<span style=color:#66d9ef>)</span>/plugins/pyenv-virtualenv
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># MacOS:</span>
+</span></span><span style=display:flex><span>% brew install pyenv-virtualenv
+</span></span></code></pre></div><h2 id=использование-pyenv-в-ubuntu-linux-mac>Использование pyenv в Ubuntu Linux/ Mac</h2><p>Первым делом мы хотим установить в систему одну или несколько версий интерпретатора. Нужно определиться с версией.
+Это сделать легко:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Например, мы ищем доступные версии в ветке 3.9</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>$ pyenv install --list | grep 3.9
+</span></span><span style=display:flex><span>  3.9.0
+</span></span><span style=display:flex><span>  3.9-dev
+</span></span><span style=display:flex><span>  3.9.1
+</span></span><span style=display:flex><span>  3.9.2
+</span></span><span style=display:flex><span>  3.9.3
+</span></span><span style=display:flex><span>  3.9.4
+</span></span><span style=display:flex><span>  3.9.5
+</span></span><span style=display:flex><span>  miniconda-3.9.1
+</span></span><span style=display:flex><span>  miniconda3-3.9.1
+</span></span><span style=display:flex><span>  miniconda3-3.9-4.9.2
+</span></span></code></pre></div><h5 id=установка-выбранной-версии-395>Установка выбранной версии (3.9.5):</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ pyenv install 3.9.5 
+</span></span><span style=display:flex><span>Downloading Python-3.9.5.tar.xz...
+</span></span><span style=display:flex><span>-&gt; https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tar.xz
+</span></span><span style=display:flex><span>Installing Python-3.9.5...
+</span></span><span style=display:flex><span>Installed Python-3.9.5 to /home/user/.pyenv/versions/3.9.5
+</span></span></code></pre></div><blockquote><p><strong>Если произошла ошибка</strong><br>В этом месте у некоторых возникает ошибка связанная с отсутствием установленного
+компилятора GCC или с наличием каких-то других неудовлетворенных зависимостей:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>checking <span style=color:#66d9ef>for</span> gcc... no
+</span></span><span style=display:flex><span>checking <span style=color:#66d9ef>for</span> cc... no
+</span></span><span style=display:flex><span>checking <span style=color:#66d9ef>for</span> cl.exe... no
+</span></span><span style=display:flex><span>configure: error: in <span style=color:#e6db74>`</span>/tmp/python-build.20210518150017.23041/Python-3.9.5<span style=color:#960050;background-color:#1e0010>&#39;</span>:
+</span></span><span style=display:flex><span>configure: error: no acceptable C compiler found in $PATH
+</span></span></code></pre></div><p>Скорее всего это говорит о том, что необходимо установить зависимости. На <a href=https://github.com/pyenv/pyenv/wiki#suggested-build-environment>GitHub</a>
+есть вся необходимая информация как исправить эту ситуацию:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Ubuntu Linux  </span>
+</span></span><span style=display:flex><span>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># MacOS</span>
+</span></span><span style=display:flex><span>brew install openssl readline sqlite3 xz zlib
+</span></span></code></pre></div><p>После этого необходимо повторить установку дистрибутива Python</p></blockquote><h5 id=просмотр-установленных-версий-интерпретатора>Просмотр установленных версий интерпретатора:</h5><p>В примере ниже видно, что на Маке установлены три версии интерпретатора, и активной (дефолтной) является версия 2.7.18. Активной эта версия
+стала из-за того что я перешел в каталог который настроен для использования именно этой версии Python:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ pyenv versions
+</span></span><span style=display:flex><span>  system
+</span></span><span style=display:flex><span>* 2.7.18 <span style=color:#f92672>(</span>set by /Users/user/work/py_env/.python-version<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>  2.7.18/envs/pynvim2
+</span></span><span style=display:flex><span>  2.8
+</span></span><span style=display:flex><span>  3.9.4
+</span></span><span style=display:flex><span>  3.9.4/envs/2.8
+</span></span><span style=display:flex><span>  3.9.4/envs/pynvim3
+</span></span><span style=display:flex><span>  pynvim2
+</span></span><span style=display:flex><span>  pynvim3
+</span></span></code></pre></div><h5 id=настроить-каталог-на-определенную-версию-python>Настроить каталог на определенную версию Python</h5><p>Это делается с помощью команды:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Устанавливается локальная версия Python 3.9.4</span>
+</span></span><span style=display:flex><span>$ pyenv local 3.9.4
+</span></span><span style=display:flex><span>$ python3 --version
+</span></span><span style=display:flex><span>Python 3.9.4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#  Можно указать сразу две версии:</span>
+</span></span><span style=display:flex><span>$ pyenv local 3.9.4 2.7.18
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Если глобально установлена версия 3.9.2, то при отсутствии </span>
+</span></span><span style=display:flex><span><span style=color:#75715e># иного указания будет использоваться глобальная версия:</span>
+</span></span><span style=display:flex><span>$ pyenv local 2.7.18
+</span></span><span style=display:flex><span>$ python --version
+</span></span><span style=display:flex><span>Python 2.7.18
+</span></span><span style=display:flex><span>$ python3 --version
+</span></span><span style=display:flex><span>Python 3.9.2				<span style=color:#75715e># Глобальная версия версия Python 3.9.2</span>
+</span></span></code></pre></div><h5 id=установка-глобальной-дефолтной-версии-python>Установка глобальной (дефолтной) версии Python</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>% pyenv global 2.8
+</span></span><span style=display:flex><span>% pyenv versions
+</span></span><span style=display:flex><span>  system
+</span></span><span style=display:flex><span>  2.7.18
+</span></span><span style=display:flex><span>  2.7.18/envs/pynvim2
+</span></span><span style=display:flex><span>* 2.8 <span style=color:#f92672>(</span>set by /Users/dmn/.pyenv/version<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>  3.9.4
+</span></span><span style=display:flex><span>  3.9.4/envs/2.8
+</span></span><span style=display:flex><span>  3.9.4/envs/pynvim3
+</span></span><span style=display:flex><span>  pynvim2
+</span></span><span style=display:flex><span>  pynvim3
+</span></span></code></pre></div><p>В каком сценарии удобно использовать плагин pyenv-virtualenv<br>В случае с Neovim, мы указываем путь к интерпретатору который нам возвращает команда <code>pyenv which python</code> после активации.
+То есть Neovim бужет вызывать явно указанный нами интерпретатор работающий в отдельном виртуальном окружении.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ pyenv virtualenv 3.9.5 pynvim3
+</span></span><span style=display:flex><span>$ pyenv activate pynvim3
+</span></span><span style=display:flex><span>pyenv-virtualenv: prompt changing will be removed from future release. configure <span style=color:#e6db74>`</span>export PYENV_VIRTUALENV_DISABLE_PROMPT<span style=color:#f92672>=</span>1<span style=color:#960050;background-color:#1e0010>&#39;</span> to simulate the behavior.
+</span></span><span style=display:flex><span>$ python3 -m pip install pynvim
+</span></span><span style=display:flex><span>$ pyenv which python
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Обратите внимание по какому пути будет вызван интерпретатор:</span>
+</span></span><span style=display:flex><span>$ pyenv which python
+</span></span><span style=display:flex><span>/home/user/.pyenv/versions/pynvim3/bin/python
+</span></span></code></pre></div><h3 id=заключение>Заключение</h3><p>Использование pyenv очень желательно и лично мной рекомендуется в ситуации, когда в операционной системе уже установлена
 какая-либо версия Python (и ОС с этой версией тесно интегрирована) и при этом вам нужно установить еще одну версию.
-В MacOS и Ubuntu Linux при этом возникает риск как минимум сильно усложнить себе работу в такой среде.</p>
-<p>Применение pyenv позволит иметь почти неограниченное количество версий, виртуальных окружений для ваших проектов и экспериментов.</p>
-		</div>
-		<footer class="post__footer">
-			
-<div class="post__tags tags clearfix">
-	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/python/" rel="tag">python</a>
-		</li>
-	</ul>
-</div>
-		</footer>
-	</article>
-</main>
-
-
-<nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/hugo_install/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Назад</span>
-			<p class="pager__title">Установка Hugo и хостинг на GitPages</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/plany-na-posty/" rel="next">
-			<span class="pager__subtitle">Вперед&thinsp;»</span>
-			<p class="pager__title">Планы по статьям</p>
-		</a>
-	</div>
-</nav>
-
-
-			</div>
-			<aside class="sidebar"><div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
-		<label>
-			<input class="widget-search__field" type="search" placeholder="ПОИСК…" value="" name="q" aria-label="ПОИСК…">
-		</label>
-		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
-	</form>
-</div>
-<div class="widget-recent widget">
-	<h4 class="widget__title">Недавние публикации</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/airflow/airflow2_install_with_docker/">Apache Airflow 2/3. Установка с использованием Docker</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/qlik/configure_qlik_web_connectors/">Qlik Web Connectors 2/2. Конфигурирование</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/qlik/install_qlik_web_connectors/">Qlik Web Connectors 1/2. Установка</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/airflow/airflow2_install/">Apache Airflow 1/3. Установка и первые шаги</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/docker/docker/">Использование Docker для разработки на Python 1/2</a></li>
-		</ul>
-	</div>
-</div>
-<div class="widget-categories widget">
-	<h4 class="widget__title">Категории</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/bi/">BI</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/data/">Data</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/development/">Development</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/web/">Web</a></li>
-		</ul>
-	</div>
-</div>
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Теги</h4>
-	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/airflow/" title="Airflow">Airflow</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/bi/" title="BI">BI</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/blog/" title="blog">blog</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/datascience/" title="Datascience">Datascience</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/docker/" title="Docker">Docker</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/git/" title="git">git</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/qlik/" title="Qlik">Qlik</a>
-	</div>
-</div>
-<div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">Социальные сети</h4>
-	<div class="widget-social__content widget__content">
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/ideabi.ru" target="_blank">
-				<svg class="widget-social__link-icon icon icon-facebook" width="24" height="24" viewBox="0 0 352 352"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
-				<span>Facebook</span>
-			</a>
-		</div>
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/ideacompru" target="_blank">
-				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
-				<span>Twitter</span>
-			</a>
-		</div>
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Telegram" rel="noopener noreferrer" href="https://t.me/deviatov" target="_blank">
-				<svg class="widget-social__link-icon icon icon-telegram" width="24" height="24" viewBox="0 0 132 110"><path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg>
-				<span>Telegram</span>
-			</a>
-		</div>
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/mdeviatov" target="_blank">
-				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
-				<span>GitHub</span>
-			</a>
-		</div>
-
-		
-	</div>
-</div>
-</aside>
-		</div>
-		<footer class="footer">
-	<div class="container footer__container flex">
-		
-		<div class="footer__copyright">
-			&copy; 2022 Maxim N. Deviatov.
-			<span class="footer__copyright-credits">Сгенерировано с использованием <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> и темы <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
-		</div>
-	</div>
-</footer>
-	</div>
-<script async defer src="/js/menu.js"></script>
-</body>
-</html>
+В MacOS и Ubuntu Linux при этом возникает риск как минимум сильно усложнить себе работу в такой среде.</p><p>Применение pyenv позволит иметь почти неограниченное количество версий, виртуальных окружений для ваших проектов и экспериментов.</p></div><footer class=post__footer><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/python/ rel=tag>python</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/post/hugo_install/ rel=prev><span class=pager__subtitle>«&#8201;Назад</span><p class=pager__title>Установка Hugo и хостинг на GitPages</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/post/plany-na-posty/ rel=next><span class=pager__subtitle>Вперед&#8201;»</span><p class=pager__title>Планы по статьям</p></a></div></nav><section class=comments><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//maximdeviatov.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></section></div><aside class=sidebar><div class="widget-recent widget"><h4 class=widget__title>Недавние публикации</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/post/airflow/airflow2_install_with_docker/>Apache Airflow 2/3. Установка с использованием Docker</a></li><li class=widget__item><a class=widget__link href=/post/qlik/configure_qlik_web_connectors/>Qlik Web Connectors 2/2. Конфигурирование</a></li><li class=widget__item><a class=widget__link href=/post/qlik/install_qlik_web_connectors/>Qlik Web Connectors 1/2. Установка</a></li><li class=widget__item><a class=widget__link href=/post/airflow/airflow2_install/>Apache Airflow 1/3. Установка и первые шаги</a></li><li class=widget__item><a class=widget__link href=/post/docker/docker/>Использование Docker для разработки на Python 1/2</a></li></ul></div></div><div class="widget-categories widget"><h4 class=widget__title>Категории</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/categories/bi/>BI</a></li><li class=widget__item><a class=widget__link href=/categories/data/>Data</a></li><li class=widget__item><a class=widget__link href=/categories/development/>Development</a></li><li class=widget__item><a class=widget__link href=/categories/web/>Web</a></li></ul></div></div><div class="widget-taglist widget"><h4 class=widget__title>Теги</h4><div class=widget__content><a class="widget-taglist__link widget__link btn" href=/tags/airflow/ title=Airflow>Airflow</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bi/ title=BI>BI</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/blog/ title=blog>blog</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/datascience/ title=Datascience>Datascience</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/docker/ title=Docker>Docker</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/hugo/ title=hugo>hugo</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/python/ title=Python>Python</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/qlik/ title=Qlik>Qlik</a></div></div><div class="widget-social widget"><h4 class="widget-social__title widget__title">Социальные сети</h4><div class="widget-social__content widget__content"><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Telegram rel="noopener noreferrer" href=https://t.me/deviatov target=_blank><svg class="widget-social__link-icon icon icon-telegram" width="24" height="24" viewBox="0 0 132 110"><path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg><span>Telegram</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=GitHub rel="noopener noreferrer" href=https://github.com/mdeviatov target=_blank><svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0C85.9.0.0 85.8.0 191.7c0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2.0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8.0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7.0.0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4.0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5.0 25.6-.2 46.3-.2 52.6.0 5.1 3.5 11.1 13.2 9.2C329 348.2 384 276.4 384 191.7 384 85.8 298 0 192 0z"/></svg><span>GitHub</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Email href=mailto:mdeviatov@gmail.com><svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16V16 0h-16H16 0zm347 16-139 92.5L69 32zM199 157.5l9 5.5 9-5.5L384 46v210H32V46z"/></svg><span>mdeviatov@gmail.com</span></a></div></div></div><div class="widget-languages widget"><h4 class=widget__title>Языки</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class="widget-languages__link widget__link" href=/><span class="widget-languages__link-btn widget__link-btn btn">RU</span></a></li><li class=widget__item><a class="widget-languages__link widget__link" href=/en/><span class="widget-languages__link-btn widget__link-btn btn">EN</span></a></li></ul></div></div><div class="widget-search widget"><form class=widget-search__form role=search method=get action=https://google.com/search><label><input class=widget-search__field type=search placeholder=ПОИСК… name=q aria-label=ПОИСК…></label>
+<input class=widget-search__submit type=submit value=Search>
+<input type=hidden name=sitesearch value=https://blog.ideabi.ru/></form></div></aside></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Maxim N. Deviatov.
+<span class=footer__copyright-credits>Сгенерировано с использованием <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> и темы <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>
